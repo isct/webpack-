@@ -82,10 +82,10 @@ export default function() {
 npx webpack
 ```
 因为npm会从全局模块中找webpack，但是我并非全局安装，而是项目本地安装，所以报错。所以需要npx命令运行命令。npx会先找项目中的node_modules中的包文件，执行命令成功后会在项目中增加一个dist文件，文件中有一个打包后的main.js文件。
-![avatar](/src/img/2.png)
+![avatar](./src/img/2.png)
 
 此时我们在浏览器中打开index.html 文件，在页面中看到 hello world!!!
-![avatar](/src/img/1.png)
+![avatar](./src/img/1.png)
 
 
 在上面的命令中，我们采用了webpack的默认设置，我们也可以在命令行中指定入口文件、输出文件、打包模式等信息
@@ -100,7 +100,7 @@ npx webpack --entry=./src/index.js --output-filename=bundle.js --mode=developmen
 scripts是npm提供的脚本命令功能，所以在这里我们可以直接使用webpack命令取代之前的npx webpack。
 
 在控制台输入npm命令，打包成功
-![avatar](/src/img/3.png)
+![avatar](./src/img/3.png)
 ```
 npm run build
 ```
@@ -128,7 +128,7 @@ module.exports = {
 这个对象包含连个属性，entry为项目入口文件，output为打包出口文件，其中filename为打包文件名称，path为文件打包路径。通过调用node.js的path模块，将__dirname(node.js内置全局变量，值为当前文件所在的绝对路径)与输出路径连接起来，得到了最终资源输出路径。
 
 现在我们去掉package.json中build后面的参数去掉，只保留"build": "webpack"，然后在控制台输入npm run build，打包成功了
-![avatar](/src/img/4.png)
+![avatar](./src/img/4.png)
 
 ### 使用不同的配置文件
 
@@ -141,7 +141,7 @@ module.exports = {
   },
 ```
 执行打包命令后。打包结果如下
-![avatar](/src/img/5.png)
+![avatar](./src/img/5.png)
 
 总结
 在上面我们介绍了
